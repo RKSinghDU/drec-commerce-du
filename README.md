@@ -25,4 +25,4 @@ Every scholar must register with the DREC **before** starting, regardless of pat
 
 ## Contact
 
-Ethics queries: drec.commerce@du.ac.in
+Ethics queries: phd@commerce.du.ac.in
