@@ -2,6 +2,12 @@
 
 This summarises the Standard Operating Protocol. The authoritative documents are the DREC Guidelines (DU-DoC-DREC-2025-01) and the Evaluation Protocol.
 
+## Application lifecycle at a glance
+
+![DREC application lifecycle map](assets/lifecycle-map.svg)
+
+The map shows the full path from submission to certificate: the main sequence (submit, triage, completeness, assign, score, decide), the four possible outcomes, and the ongoing obligations after clearance. Revise-and-resubmit loops back into scoring; approved and approved-with-conditions lead to the certificate.
+
 ## 1. Triage - which pathway?
 
 The Member Secretary classifies each application before review:
@@ -28,7 +34,7 @@ Reviewers score against nine criteria: scientific merit; voluntary participation
 - Any major concern -> Revise and resubmit (re-reviewed within 3 weeks)
 - Irremediable concern -> Rejected (right of appeal within 21 days)
 
-Decisions are communicated in writing within five working days of the review meeting.
+The Ethical Clearance Certificate template is in [templates/ETHICAL_CLEARANCE_CERTIFICATE.md](templates/ETHICAL_CLEARANCE_CERTIFICATE.md). Decisions are communicated in writing within five working days of the review meeting.
 
 ## 5. Transparency
 
