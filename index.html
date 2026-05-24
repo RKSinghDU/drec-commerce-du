@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DREC · Department of Commerce, University of Delhi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1E2761; --navy2:#2B3A78; --ice:#CADCFC; --gold:#C8923D; --gold-soft:#E0A458;
+    --ink:#1A1A2E; --mute:#5C6488; --line:#E2E7F4; --paper:#FBFCFE; --teal:#2A7D72;
+    --card:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Karla',sans-serif;color:var(--ink);background:var(--paper);
+    line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+  header{
+    background:
+      radial-gradient(1100px 520px at 88% -10%, rgba(43,58,120,.9), transparent 60%),
+      radial-gradient(700px 400px at -5% 110%, rgba(200,146,61,.18), transparent 55%),
+      var(--navy);
+    color:#fff;position:relative;overflow:hidden;
+    border-bottom:3px solid var(--gold);
+  }
+  header::after{
+    content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;
+    border-radius:50%;border:1px solid rgba(202,220,252,.18);
+  }
+  .topbar{display:flex;align-items:center;gap:14px;padding:26px 0 0}
+  .crest{
+    width:46px;height:46px;border-radius:12px;background:rgba(202,220,252,.14);
+    display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+    border:1px solid rgba(202,220,252,.25);
+  }
+  .crest svg{width:24px;height:24px}
+  .topbar .org{font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ice);font-weight:600}
+  .hero{padding:54px 0 64px;position:relative;z-index:1;max-width:760px}
+  .kicker{font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);font-weight:700;margin-bottom:18px}
+  .hero h1{
+    font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.3rem,5.2vw,3.7rem);
+    line-height:1.04;letter-spacing:-.01em;margin-bottom:20px;
+  }
+  .hero p{font-size:1.12rem;color:#D9E0F5;max-width:600px}
+  .hero .note{
+    margin-top:26px;display:inline-flex;align-items:center;gap:10px;
+    font-size:.92rem;color:var(--ice);background:rgba(202,220,252,.1);
+    border:1px solid rgba(202,220,252,.2);padding:9px 16px;border-radius:999px;
+  }
+  .hero .note b{color:#fff;font-weight:700}
+
+  .actions{margin-top:-42px;position:relative;z-index:3;padding-bottom:8px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .act{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 24px 24px;
+    box-shadow:0 18px 40px -24px rgba(30,39,97,.4);transition:transform .22s ease,box-shadow .22s ease,border-color .22s;
+    display:flex;flex-direction:column;min-height:218px;
+  }
+  .act:hover{transform:translateY(-5px);box-shadow:0 26px 52px -22px rgba(30,39,97,.5);border-color:var(--ice)}
+  .act .ic{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .act .ic svg{width:23px;height:23px}
+  .act.primary .ic{background:var(--navy)}
+  .act.tmpl .ic{background:var(--teal)}
+  .act.reg .ic{background:var(--gold)}
+  .act h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.32rem;margin-bottom:7px;color:var(--navy)}
+  .act p{font-size:.95rem;color:var(--mute);flex:1}
+  .act .go{margin-top:16px;font-weight:700;font-size:.92rem;display:inline-flex;align-items:center;gap:7px;color:var(--navy)}
+  .act.tmpl .go{color:var(--teal)} .act.reg .go{color:var(--gold)}
+  .act .go svg{width:15px;height:15px;transition:transform .2s}
+  .act:hover .go svg{transform:translateX(4px)}
+
+  section{padding:62px 0}
+  .sec-head{margin-bottom:34px;max-width:680px}
+  .sec-head .kick{font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);font-weight:700;margin-bottom:10px}
+  .sec-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.7rem,3.4vw,2.3rem);color:var(--navy);letter-spacing:-.01em}
+
+  .paths{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .path{border:1px solid var(--line);border-radius:14px;padding:24px;background:#fff;position:relative;overflow:hidden}
+  .path::before{content:"";position:absolute;top:0;left:0;right:0;height:4px}
+  .path.p1::before{background:var(--teal)} .path.p2::before{background:var(--gold-soft)} .path.p3::before{background:#C25B43}
+  .path .tag{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+  .path.p1 .tag{color:var(--teal)} .path.p2 .tag{color:var(--gold)} .path.p3 .tag{color:#C25B43}
+  .path h4{font-family:'Fraunces',serif;font-size:1.18rem;font-weight:600;color:var(--navy);margin-bottom:8px}
+  .path p{font-size:.9rem;color:var(--mute)}
+  .path .time{margin-top:14px;font-size:.82rem;color:var(--ink);font-weight:600}
+
+  .proc{background:var(--navy);color:#fff;border-radius:20px;padding:44px 40px;position:relative;overflow:hidden}
+  .proc::after{content:"";position:absolute;right:-80px;bottom:-100px;width:300px;height:300px;border-radius:50%;background:var(--navy2)}
+  .proc h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.9rem;margin-bottom:8px;position:relative;z-index:1}
+  .proc .sub{color:var(--ice);margin-bottom:30px;position:relative;z-index:1}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative;z-index:1}
+  .step{padding-top:16px;border-top:2px solid rgba(202,220,252,.28)}
+  .step .n{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--gold-soft);font-weight:600;line-height:1}
+  .step h5{font-size:.95rem;margin:8px 0 4px;font-weight:700}
+  .step p{font-size:.8rem;color:var(--ice);line-height:1.45}
+
+  .reslist{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .res{display:flex;gap:16px;align-items:flex-start;border:1px solid var(--line);border-radius:13px;padding:18px 20px;background:#fff;transition:border-color .2s,transform .2s}
+  .res:hover{border-color:var(--ice);transform:translateY(-2px)}
+  .res .ic{width:38px;height:38px;border-radius:10px;background:#F0F3FC;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .res .ic svg{width:19px;height:19px}
+  .res h4{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:2px}
+  .res p{font-size:.85rem;color:var(--mute)}
+
+  footer{background:#0F1538;color:#C8CFE8;padding:50px 0 34px;margin-top:8px}
+  .foot-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-start}
+  footer h4{color:#fff;font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;margin-bottom:6px}
+  footer a.mail{color:var(--gold-soft);font-weight:600}
+  .privacy{max-width:430px;font-size:.86rem;line-height:1.55}
+  .foot-links{display:flex;flex-direction:column;gap:8px;font-size:.9rem}
+  .foot-links a:hover{color:#fff}
+  .copy{margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem;color:#7B85AD}
+
+  @media(max-width:860px){
+    .grid3,.paths{grid-template-columns:1fr}
+    .steps{grid-template-columns:repeat(2,1fr);gap:20px}
+    .reslist{grid-template-columns:1fr}
+    .actions{margin-top:-28px}
+    .proc{padding:34px 26px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="crest">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#CADCFC" stroke-width="1.8"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="org">Department of Commerce · University of Delhi</div>
+    </div>
+    <div class="hero">
+      <div class="kicker">Departmental Research Ethics Committee</div>
+      <h1>Ethics clearance for doctoral research</h1>
+      <p>Your single starting point to register a study, download the required forms, and view the committee's decisions — for PhD scholars and committee members alike.</p>
+      <div class="note"><b>Every scholar registers before starting</b> — whether or not human participants are involved.</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap actions">
+  <div class="grid3">
+    <a class="act primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeAI0efU7cgUYFuCUW0Ls-uWZjtzbIIWqSJ6wr-rIpx4eE0SA/viewform" target="_blank" rel="noopener">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9"><path d="M9 11l3 3L22 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Apply for clearance</h3>
+      <p>Scholars submit the application online. Responses go straight to the committee for triage.</p>
+      <span class="go">Open the application form <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+    <a class="act tmpl" href="https://github.com/RKSinghDU/drec-commerce-du/tree/main/templates" target="_blank" rel="noopener">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9"><path d="M14 3v5h5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-5z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Forms &amp; templates</h3>
+      <p>The current versions of all required documents — forms DREC-01 to 09, PIS, ICF, DMP, and letters.</p>
+      <span class="go">Browse the templates <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+    <a class="act reg" href="https://github.com/RKSinghDU/drec-commerce-du/blob/main/DECISIONS_REGISTER.md" target="_blank" rel="noopener">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9"><path d="M3 12s3-7 9-7 9 7 9 7-3 7-9 7-9-7-9-7z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <h3>Decisions register</h3>
+      <p>The anonymised public record of every clearance decision — open for transparency and audit.</p>
+      <span class="go">View the register <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">How review works</div>
+      <h2>Three review pathways</h2>
+    </div>
+    <div class="paths">
+      <div class="path p1">
+        <div class="tag">Fastest</div>
+        <h4>Self-declaration</h4>
+        <p>No primary data and no personal data — literature reviews, meta-analyses, bibliometric and public-domain work.</p>
+        <div class="time">Near-immediate · Form DREC-02</div>
+      </div>
+      <div class="path p2">
+        <div class="tag">Light-touch</div>
+        <h4>Expedited</h4>
+        <p>Minimal-risk or exemption-eligible studies — anonymous surveys, public secondary data, licence-only datasets.</p>
+        <div class="time">~2–3 weeks · Chair + 2 faculty</div>
+      </div>
+      <div class="path p3">
+        <div class="tag">Full scrutiny</div>
+        <h4>Full board</h4>
+        <p>Sensitive, identifiable, cross-border or dual-use research, or anything above minimal risk.</p>
+        <div class="time">~4–6 weeks · incl. External Member</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="proc">
+      <h2>From application to certificate</h2>
+      <div class="sub">The journey of every submission, in five steps.</div>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h5>Triage</h5><p>The pathway is determined from the data involved.</p></div>
+        <div class="step"><div class="n">2</div><h5>Completeness</h5><p>The full packet is checked before review.</p></div>
+        <div class="step"><div class="n">3</div><h5>Scoring</h5><p>Reviewers score against nine criteria.</p></div>
+        <div class="step"><div class="n">4</div><h5>Decision</h5><p>Approved, conditions, revise, or rejected.</p></div>
+        <div class="step"><div class="n">5</div><h5>Record</h5><p>The outcome is logged in the public register.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">Reference</div>
+      <h2>Guidance &amp; documents</h2>
+    </div>
+    <div class="reslist">
+      <a class="res" href="https://github.com/RKSinghDU/drec-commerce-du/blob/main/SUBMISSION_GUIDE.md" target="_blank" rel="noopener">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1E2761" stroke-width="1.8"><path d="M4 4h16v16H4z" stroke-linejoin="round"/><path d="M8 8h8M8 12h8M8 16h5" stroke-linecap="round"/></svg></div>
+        <div><h4>Submission guide</h4><p>What to submit, in what format, and where.</p></div>
+      </a>
+      <a class="res" href="https://github.com/RKSinghDU/drec-commerce-du/blob/main/PROCESS.md" target="_blank" rel="noopener">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1E2761" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h4>Evaluation process</h4><p>How applications are triaged, reviewed and decided.</p></div>
+      </a>
+      <a class="res" href="https://drive.google.com/drive/folders/1j16M8HpgjVMCC-U0j0szPpK0-aqIEx_H" target="_blank" rel="noopener">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1E2761" stroke-width="1.8"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linejoin="round"/></svg></div>
+        <div><h4>All documents (Drive)</h4><p>The complete instrument set in one shared folder.</p></div>
+      </a>
+      <a class="res" href="https://github.com/RKSinghDU/drec-commerce-du" target="_blank" rel="noopener">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1E2761" stroke-width="1.8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3-.3 6-1.5 6-6.5a5 5 0 0 0-1.4-3.5 4.7 4.7 0 0 0-.1-3.5s-1.1-.3-3.5 1.3a12 12 0 0 0-6 0C6.6 1.7 5.5 2 5.5 2a4.7 4.7 0 0 0-.1 3.5A5 5 0 0 0 4 9c0 5 3 6.2 6 6.5a3.4 3.4 0 0 0-1 2.6V22" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h4>Repository</h4><p>Public templates, process docs and the register.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Get in touch</h4>
+        <p>Questions about ethics clearance?</p>
+        <p><a class="mail" href="mailto:drec.commerce@du.ac.in">drec.commerce@du.ac.in</a></p>
+        <p class="privacy" style="margin-top:18px">Application packets containing personal data are held within the Department's secure Google Workspace, in line with the Digital Personal Data Protection Act, 2023. This site and the repository hold only public, non-personal material.</p>
+      </div>
+      <div class="foot-links">
+        <h4>Quick links</h4>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeAI0efU7cgUYFuCUW0Ls-uWZjtzbIIWqSJ6wr-rIpx4eE0SA/viewform" target="_blank" rel="noopener">Apply for clearance</a>
+        <a href="https://github.com/RKSinghDU/drec-commerce-du/tree/main/templates" target="_blank" rel="noopener">Forms &amp; templates</a>
+        <a href="https://github.com/RKSinghDU/drec-commerce-du/blob/main/DECISIONS_REGISTER.md" target="_blank" rel="noopener">Decisions register</a>
+        <a href="https://github.com/RKSinghDU/drec-commerce-du/blob/main/SUBMISSION_GUIDE.md" target="_blank" rel="noopener">Submission guide</a>
+      </div>
+    </div>
+    <div class="copy">Departmental Research Ethics Committee · Ref DU-DoC-DREC-2025-01 · Version 1.0 · AY 2025-26</div>
+  </div>
+</footer>
+
+</body>
+</html>
