@@ -10,7 +10,10 @@ The current blank templates for all submissions. Download, fill in, and submit t
 | Data Management Plan (DMP) | How data is stored, secured, retained, destroyed |
 | Supervisor's Forwarding Letter | Supervisor certification (packet item 11) |
 | Organisational Access Permission Letter | Organisation's permission (packet item 7) |
+| [Ethical Clearance Certificate (ECC)](ETHICAL_CLEARANCE_CERTIFICATE.md) | The certificate issued to a scholar on approval |
 | Evaluation Toolkit (spreadsheet) | Triage, completeness, scoring rubric, register (committee use) |
 | Evaluation Protocol | The Standard Operating Protocol |
+
+The full application lifecycle is mapped in [../assets/lifecycle-map.svg](../assets/lifecycle-map.svg) and embedded in [../PROCESS.md](../PROCESS.md).
 
 To publish the actual files, upload the .docx / .xlsx into this folder (drag-and-drop on GitHub, or commit them). Keep a single current version so scholars never use an outdated form.
