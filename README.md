@@ -6,14 +6,21 @@ This repository is the public, no-personal-data side of the DREC workflow. It ho
 
 > **Privacy boundary.** No application, filled form, consent record, or personal/identifiable data is ever stored in this repository. Completed submissions (which contain personal data) are handled inside the Department's Google Workspace, in line with the Digital Personal Data Protection Act, 2023. Only blank templates, process docs, and anonymised decision summaries live here.
 
+## Application lifecycle at a glance
+
+![DREC application lifecycle map](assets/lifecycle-map.svg)
+
+From submission to certificate: triage, completeness, scoring, decision, and the obligations that follow clearance. Full detail in [PROCESS.md](PROCESS.md).
+
 ## What's here
 
 | File / folder | Purpose |
 | --- | --- |
-| PROCESS.md | How applications are triaged, reviewed, and decided |
+| PROCESS.md | How applications are triaged, reviewed, and decided (includes the lifecycle map) |
 | SUBMISSION_GUIDE.md | What a scholar submits, in what format, and where |
-| templates/ | The blank forms and templates (always the current version) |
+| templates/ | The blank forms and templates, including the Ethical Clearance Certificate |
 | DECISIONS_REGISTER.md | Anonymised public record of every decision (Guideline 1.3) |
+| assets/ | Diagrams and images (the lifecycle map) |
 
 ## The three review pathways at a glance
 
