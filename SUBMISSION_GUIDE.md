@@ -2,7 +2,7 @@
 
 ## Where to submit
 
-Applications are NOT submitted through GitHub. Submit through the Department's online intake (Google Form -> Drive), which keeps your personal data within the institutional environment. Contact drec.commerce@du.ac.in for the current intake link.
+Applications are NOT submitted through GitHub. Submit through the Department's online intake (Google Form -> Drive), which keeps your personal data within the institutional environment. Contact phd@commerce.du.ac.in for the current intake link.
 
 ## Format
 
